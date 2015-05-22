@@ -1,0 +1,9 @@
+- title: New Test Coverage View
+  category: News
+  link: http://example.com
+  status: unread
+
+- title: Python Testing (beta)
+  category: News
+  link: http://example.com
+  status: read

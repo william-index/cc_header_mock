@@ -1,0 +1,42 @@
+%header.site_header
+  .acct_head
+    -# Logo
+    %h1 Code Climate
+
+    -# open menu icons
+    %a.acct_head__open_menu{"data-menu" => "notes"}
+      -# svg tower
+
+    %a.acct_head__open_menu{"data-menu" => "actions"}
+      %img
+      -# svg arrow
+
+    -# notifications dropdown menu
+    %nav.acct_head__notes
+      - data.notes.each do |note|
+        %li.acct_head__note
+          %a{href: note.link, target: "_blank"}
+            %strong= note.category
+            = note.title
+          %button
+
+    -# account dropdown menu
+    %nav.acct_head__actions
+      %a.add{href: "#"}
+        Add Repo
+      .hr
+      %a.acct{href: "#"}
+        Account
+      %a.logout{href: "#"}
+        Logout
+
+  -# Repo Specific navigation and links
+  %section.repo_head
+    %nav.repo_head__nav
+      %a.repo_head__link{href: "#"}
+        william-index
+      %span /
+      %a.repo_head__link{href: "#"}
+        placemat
+      %a.repo_head__link.repo_head__link--action{href: "#"}
+        Settings
