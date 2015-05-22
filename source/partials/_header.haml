@@ -1,42 +1,45 @@
 %header.site_header
   .acct_head
     -# Logo
+    = partial "images/raw_svg/logo_icon.svg"
     %h1 Code Climate
 
     -# open menu icons
-    %a.acct_head__open_menu{"data-menu" => "notes"}
-      -# svg tower
+    %a.menu_btn{"data-menu" => "notes"}
+      = partial "images/raw_svg/tower.svg"
 
-    %a.acct_head__open_menu{"data-menu" => "actions"}
+    %a.menu_btn{"data-menu" => "actions"}
       %img
       -# svg arrow
 
     -# notifications dropdown menu
-    %nav.acct_head__notes
+    %nav.menu_dropdown.menu_dropdown--notes
       - data.notes.each do |note|
-        %li.acct_head__note
-          %a{href: note.link, target: "_blank"}
+        %li.menu_dropdown__note
+          %a.menu_dropdown__link{href: note.link, target: "_blank"}
             %strong= note.category
             = note.title
-          %button
+          %button.check_button
+            = partial "images/raw_svg/check.svg"
+
 
     -# account dropdown menu
-    %nav.acct_head__actions
-      %a.add{href: "#"}
+    %nav.menu_dropdown.menu_dropdown--actions
+      %a.menu_dropdown__link.add{href: "#"}
         Add Repo
       .hr
-      %a.acct{href: "#"}
+      %a.menu_dropdown__link.acct{href: "#"}
         Account
-      %a.logout{href: "#"}
+      %a.menu_dropdown__link.logout{href: "#"}
         Logout
 
   -# Repo Specific navigation and links
-  %section.repo_head
-    %nav.repo_head__nav
-      %a.repo_head__link{href: "#"}
+  .repo_head
+    %nav.repo_nav
+      %a.repo_nav_link{href: "#"}
         william-index
       %span /
-      %a.repo_head__link{href: "#"}
+      %a.repo_nav_link{href: "#"}
         placemat
-      %a.repo_head__link.repo_head__link--action{href: "#"}
+      %a.repo_nav_link.repo_nav__link--action{href: "#"}
         Settings
