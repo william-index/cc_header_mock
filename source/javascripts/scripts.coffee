@@ -23,7 +23,7 @@
     menu_doms = $(".menu_dropdown");
     # This conditional is from http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it
     #   But Adopted to coffeescript
-    if (!container.is(e.target) && container.has(e.target).length == 0)
+    if (!menu_doms.is(e.target) && menu_doms.has(e.target).length == 0)
       for menu of menus
         menus[menu].close()
 
