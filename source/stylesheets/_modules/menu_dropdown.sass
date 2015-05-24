@@ -6,13 +6,15 @@ $triangle_size: 12px
   +block(320px, auto)
   max-width: 60vw
   position: absolute
-  top: $menu_link_height
+  top: $menu_link_height - ($triangle_size / 2)
   right: 10%
-  background: $midGrey
+  background: none
 
   max-height: 0px
   opacity: 0
   +transition(max-height 0.5s, opacity 0.5s)
+  padding-top: $triangle_size / 2
+  overflow: hidden
 
 
   // traignle indicator
@@ -20,8 +22,8 @@ $triangle_size: 12px
     content: ""
     +triangle($triangle_size, $midGrey, up)
     position: absolute
-    top: -1 * $triangle_size / 2
     right: 20px
+    top: 0px
 
   // menu states
   &--open
@@ -49,6 +51,7 @@ $triangle_size: 12px
   left: 0px
   overflow: hidden
   +transition(height 0.3s, visibility 0.3s)
+  background: $midGrey
 
   // Sun is the indicator for unread/new
   .sun
@@ -80,17 +83,41 @@ $triangle_size: 12px
     .check_button, .sun, .menu_dropdown__link
       +transform(translateX(320px))
 
-
+// Links accross all menu types
 .menu_dropdown__link
   +font(13, $menu_link_height / 1px)
   margin-left: 40px
   color: white
   float: left
+  &:hover
+    color: $yellow
+    text-decoration: underline
+
+  // simplified links
+  &--simple, &--thin
+    text-indent: 15px
+    margin-left: 0px
+    width: 100%
+    border-bottom: 1px solid $white
+    background-color: $midGrey
+
+  &--thin
+    padding-top: 5px
+    height: 30px
+    line-height: 30px
+    border: 0px
+    &+a
+      padding-top: 0px
+  &--thin:last-child
+    padding-bottom: 5px
+
   strong
     font-weight: $semiBold
 
-  &.add
-
-  &.acct
-
-  &.logout
+  // Set icons for simple links
+  $icons_classes: add acct logout
+  @each $icon in $icons_classes
+    &.#{$icon}
+      background: url("images/icons/#{$icon}.svg") no-repeat 95% center
+      background-color: $midGrey
+      background-size: 10px auto

@@ -20,25 +20,25 @@
 
     -# notifications dropdown menu
     %nav.menu_dropdown.menu_dropdown--notes{"data-menu" => "notes"}
-      - data.notes.each do |note|
-        %li.menu_dropdown__note
-          - if note.status === "unread"
-            = partial "images/raw_svg/sun.svg"
-          %a.menu_dropdown__link{href: note.link, target: "_blank"}
-            %strong= note.category + ": "
-            = note.title
-          %button.check_button
-            = partial "images/raw_svg/check.svg"
+      %ul
+        - data.notes.each do |note|
+          %li.menu_dropdown__note
+            - if note.status === "unread"
+              = partial "images/raw_svg/sun.svg"
+            %a.menu_dropdown__link{href: note.link, target: "_blank"}
+              %strong= note.category + ": "
+              = note.title
+            %button.check_button
+              = partial "images/raw_svg/check.svg"
 
 
     -# account dropdown menu
     %nav.menu_dropdown.menu_dropdown--actions{"data-menu" => "actions"}
-      %a.menu_dropdown__link.add{href: "#"}
+      %a.menu_dropdown__link.menu_dropdown__link--simple.add{href: "#"}
         Add Repo
-      .hr
-      %a.menu_dropdown__link.acct{href: "#"}
+      %a.menu_dropdown__link.menu_dropdown__link--thin.acct{href: "#"}
         Account
-      %a.menu_dropdown__link.logout{href: "#"}
+      %a.menu_dropdown__link.menu_dropdown__link--thin.logout{href: "#"}
         Logout
 
   -# Repo Specific navigation and links
