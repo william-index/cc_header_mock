@@ -1,0 +1,71 @@
+/************************************************
+// The websites sticky header
+.site_header
+  +block(100%, $header_height)
+  position: fixed
+  top: 0px
+  left: 0px
+
+/************************************************
+// Styling for header that contains all user-level
+    account information and notifications
+.site_header__acct_head
+  +block(100%, $acct_head_height)
+  background: $brandGrey
+  position: relative
+
+  // Positioning for highlest level child elements
+      to sides of top bar
+  .bar_left
+    float: left
+    margin-left: 10%
+
+  .bar_right
+    position: absolute
+    top: 0px
+    right: 10%
+
+  // Core Branding
+  &__logo
+    svg
+      float: left
+      margin-top: 10px
+    h1
+      float: left
+      +font(16, 40)
+      margin-left: 10px
+      color: $white
+
+    &:hover
+      svg,h1
+        cursor: pointer
+        opacity: $hover_opacity
+
+  // Buttons that launch alternative menus/dropdowns
+  &__menu_btn
+    +block(50px, 40px)
+    float: left
+    cursor: pointer
+    background: none
+
+    &--off
+      opacity: 0
+      +transition(opacity 0.3s)
+      +transition-delay(0.8s)
+
+    &:hover
+      background: $darkGrey
+
+    img+svg
+      margin-left: 5px
+      position: relative
+      top: -7px
+
+
+/************************************************
+// Location indicator and settings option for
+    currently selected repo
+.site_header__repo_head
+  +block(100%, $repo_head_height)
+  background: $offWhite
+  border-bottom: 1px solid $white

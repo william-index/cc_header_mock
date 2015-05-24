@@ -4,11 +4,25 @@ $breaks: (s : 800px, m : 1500px)
   @media (max-width: #{map-get($breaks, $size)})
     @content
 
-// I use this A LOT
+// Positioning
 =block($w,$h)
   display: block
   width: $w
   height: $h
+
+=inline-block($w,$h)
+  display: inline-block
+  width: $w
+  height: $h
+
+=flex($w,$h)
+  display: flex
+  width: $w
+  height: $h
+
+=flex_center()
+  align-items: center
+  justify-content: center
 
 // Allows setting font as a 'fraction'
 =font($size, $leading)

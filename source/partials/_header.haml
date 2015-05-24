@@ -1,30 +1,38 @@
 %header.site_header
-  .acct_head
-    -# Logo
-    = partial "images/raw_svg/logo_icon.svg"
-    %h1 Code Climate
+  .site_header__acct_head
+    .bar_left
+      -# Logo
+      %a.site_header__acct_head__logo{href: "#"}
+        = partial "images/raw_svg/logo_icon.svg"
+        %h1 Code Climate
 
-    -# open menu icons
-    %a.menu_btn{"data-menu" => "notes"}
-      = partial "images/raw_svg/tower.svg"
+    .bar_right
+      -# open menu icons
+      %button.site_header__acct_head__menu_btn{"data-menu" => "notes"}
+        = partial "images/raw_svg/tower.svg"
 
-    %a.menu_btn{"data-menu" => "actions"}
-      %img
-      -# svg arrow
+      %button.site_header__acct_head__menu_btn{"data-menu" => "actions"}
+        .div
+          =image_tag 'users/william-index.gif'
+          = partial "images/raw_svg/down_arrow.svg"
+
+
 
     -# notifications dropdown menu
-    %nav.menu_dropdown.menu_dropdown--notes
+    %nav.menu_dropdown.menu_dropdown--notes{"data-menu" => "notes"}
       - data.notes.each do |note|
         %li.menu_dropdown__note
+          - if note.status === "unread"
+            = partial "images/raw_svg/sun.svg"
           %a.menu_dropdown__link{href: note.link, target: "_blank"}
-            %strong= note.category
+            %strong= note.category + ": "
             = note.title
           %button.check_button
             = partial "images/raw_svg/check.svg"
 
 
     -# account dropdown menu
-    %nav.menu_dropdown.menu_dropdown--actions
+    %nav.menu_dropdown.menu_dropdown--actions{"data-menu" => "actions"}
       %a.menu_dropdown__link.add{href: "#"}
         Add Repo
       .hr
@@ -34,12 +42,12 @@
         Logout
 
   -# Repo Specific navigation and links
-  .repo_head
+  .site_header__repo_head
     %nav.repo_nav
-      %a.repo_nav_link{href: "#"}
+      %a.repo_nav__link{href: "#"}
         william-index
       %span /
-      %a.repo_nav_link{href: "#"}
+      %a.repo_nav__link{href: "#"}
         placemat
-      %a.repo_nav_link.repo_nav__link--action{href: "#"}
+      %a.repo_nav__link.repo_nav__link--action{href: "#"}
         Settings
