@@ -20,7 +20,7 @@
 
   # Closes menus when clicking outside of them
   $(document).mouseup (e) ->
-    menu_doms = $(".menu_dropdown");
+    menu_doms = $(".menu_dropdown, .site_header__acct_head__menu_btn");
     # This conditional is from http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it
     #   But Adopted to coffeescript
     if (!menu_doms.is(e.target) && menu_doms.has(e.target).length == 0)
