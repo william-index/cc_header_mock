@@ -1,7 +1,6 @@
 <svg version="1.1" class="sun"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 	 x="0px" y="0px" width="16px" height="16.001px" viewBox="0 0 16 16.001" enable-background="new 0 0 16 16.001"
-	 xml:space="preserve">
+	 >
 
 <circle class="sun__core" fill="#FABB3F" cx="8" cy="8" r="2.551"/>
 <path class="sun__beam" fill="#FABB3F" d="M8,11.918c-0.358,0-0.648,0.29-0.648,0.648v2.786c0,0.359,0.29,0.649,0.648,0.649s0.648-0.29,0.648-0.649

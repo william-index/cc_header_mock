@@ -1,7 +1,6 @@
 <svg version="1.1" class="radio_tower radio_tower--active"
- xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
  x="0px" y="0px" width="17px" height="16.552px" viewBox="0 0 17 16.552" enable-background="new 0 0 17 16.552"
- xml:space="preserve">
+ >
   <g class="radio_tower__inner_waves">
     <path fill="#FFFFFF" d="M4.272,6.369c0.18,0,0.36-0.069,0.497-0.206c0.275-0.274,0.275-0.72,0-0.994h0
       C4.413,4.813,4.238,4.353,4.238,3.886c0.001-0.466,0.175-0.926,0.531-1.283c0.275-0.274,0.275-0.719,0-0.994
