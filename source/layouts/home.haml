@@ -3,5 +3,8 @@
   = partial "partials/head"
   %body
     = partial "partials/header"
-    = yield
+    %main
+      = partial "partials/project_tabs"
+      %article.core_content
+        = yield
     = partial "partials/footer"

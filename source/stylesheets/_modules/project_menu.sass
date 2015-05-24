@@ -1,0 +1,57 @@
+// This section is mostly placeholder
+//  My goal in this mock was the site level navigation
+//  this is just here for context
+
+// Project Menu
+.project_menu
+  +block(100%, 45px)
+  position: relative
+
+.tabs
+  margin-left: 10%
+
+.tabs__link
+  +font(13, 45)
+  color: $brandGrey
+  margin-left: 0px
+  padding: 5px 10px
+  border-radius: 20px
+
+  &+.tabs__link
+    margin-left: 30px
+
+  &:hover
+    background: darken($offWhite, 15%)
+
+// Action Buttons
+.buttons
+  +block(auto, 45px)
+  position: absolute
+  top: 0px
+  right: 10%
+.buttons__button
+  +font(12, 30)
+  padding: 0px 9px
+  margin: 4px 10px 0px 0px
+  border-radius: 5px
+  float: left
+  background: none
+  border: 1px solid $grey
+  +transition(all 0.5s)
+  svg
+    position: relative
+    top: 2px
+  svg path
+    fill: black
+
+  // Styling for specific modified buttons
+  $types: star social refresh
+  $colors: $yellow $blue $midGrey
+  @for $i from 1 through 3
+    &--#{nth($types, $i)}
+      &:hover
+        color: white
+        background-color: nth($colors, $i)
+        border-color: darken(nth($colors, $i), 15%)
+        svg path
+          fill: $white

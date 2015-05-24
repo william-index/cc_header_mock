@@ -1,0 +1,15 @@
+- tabs = ["Feed", "Code", "Issues", "Branches", "Trends"]
+%nav.project_menu
+  %section.tabs
+    - tabs.each do |tab|
+      %a.tabs__link{href: "#"}= tab
+  %section.buttons
+    %button.buttons__button.buttons__button--star
+      = partial "images/raw_svg/star.svg"
+      Starred
+    %button.buttons__button.buttons__button--social
+      = partial "images/raw_svg/twitter.svg"
+      Tweet
+    %button.buttons__button.buttons__button--refresh
+      = partial "images/raw_svg/refresh.svg"
+      60cd3311
